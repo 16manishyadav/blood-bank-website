@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
+
+    <title>BloodBankNearYou</title>
+    <style>
+      body {
+        background-color: rgba(191, 191, 200, 0.341);
+      }
+      body {
+        background-image: url(./static/back1.jpg);
+      /* background: linear-gradient(to bottom right, #e9dbdb, #828286); */
+      }
+    </style>
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <body>
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" width="70px" height="70px">
+          </body>
+          <a class="navbar-brand" href="#">BloodBankNearYou</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="http://127.0.0.1:5000/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/Blood%20Availability%20Search">Blood Availability Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="http://127.0.0.1:5000/Blood%20Donation%20Camp">Blood Donation Camp</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Login/Signup
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="http://127.0.0.1:5000/User%20Login">User Login</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="http://127.0.0.1:5000/User%20Signup">User Signup</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active">User Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container my-3 col-md-6">
+        <form>
+            <div class="mb-2">
+                <label for="exampleInputName" class="form-label">Name</label>
+                <input type="Name" class="form-control" id="exampleInputName" aria-describedby="NameHelp">
+            </div>
+            <!-- <div class="mb-2">
+                <label for="exampleInputGender" class="form-label">Gender</label>
+                <input type="Gender" class="form-control" id="exampleInputGender" aria-describedby="GenderHelp">
+            </div> -->
+            <div class="mb-2">
+                <label for="exampleInputGender" class="form-label">Gender</label>
+                <select class="form-control" id="exampleInputGender" name="gender" aria-describedby="GenderHelp">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+            </div>  
+            <div class="mb-2">
+                <label for="exampleInputMobilenumber" class="form-label">Mobile Number</label>
+                <input type="number" class="form-control" id="exampleInputMobilenumber" aria-describedby="MobilenumberHelp">
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-label">Email id</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputAge" class="form-label">Age</label>
+                <input type="Age" class="form-control" id="exampleInputAge" aria-describedby="AgeHelp">
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputBloodGroup" class="form-label">Blood Group</label>
+                <select class="form-control" id="exampleInputBloodGroup" name="bloodgroup" aria-describedby="BloodGroupHelp">
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputAddress" class="form-label">Address</label>
+                <input type="Address" class="form-control" id="exampleInputAddress">
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputState" class="form-label">State</label>
+                <select class="form-control" id="exampleInputState" name="state" aria-describedby="StateHelp">
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                </select>
+            </div>                
+            <div class="mb-2">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleInputConfirmPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+      </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

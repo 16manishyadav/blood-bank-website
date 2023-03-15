@@ -1,0 +1,63 @@
+
+.navbar {
+    background-color: whitesmoke !important;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5% !important;
+    
+
+    
+    
+}
+
+.title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-family: Arial;
+        /* Add this line to set the font family */
+}
+.nav-link {
+    font-size: 15px;
+    color: #171515 !important;
+    margin-right: 15px;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+}
+
+table {
+    border-color: #171515;
+    border-style: dashed;
+    border-radius: 5%;
+    /* background-color: rebeccapurple; */
+    border-collapse: separate;
+    align-items: center;
+    margin: 0 auto;
+    /* Center the table horizontally */
+    border-collapse: collapse;
+    /* Remove spacing between cells */
+    width: 50%;
+    
+    /* Set the width of the table */
+    
+  }
+
+  /* th,
+  td {
+    border-collapse: separate;
+    padding: 10px;
+    /* Add some padding to cells */
+    text-align: center;
+    /* Center the text within cells */
+    border: 1px solid rgb(206, 22, 22);
+    border-radius: 5%;
+    
+    /* Add borders to cells */
+  }
+
+  th {
+    background-color: #e8dcdc;
+    border-radius: 5%;
+    /* Add a light gray background to the table header */
+  } */
