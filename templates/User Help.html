@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" rel="stylesheet"
+    integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
+  <title>BloodBankNearYou</title>
+  <style>
+    
+      .nav-link {
+      font-size: 15px;
+      color: #060606 !important;
+      margin-right: 15px;
+      text-transform: uppercase;
+    }
+  </style>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    #logo1 {
+      position: relative;
+      top: 0%;
+      left: 0%;
+    }
+  </style>
+  <!-- dop the shadow under then navbar -->
+  <style>
+    #bar {
+      box-shadow: 0 2px 6px 0 rgba(195, 26, 26, 0.2), 0 2px 6px 0 rgba(180, 22, 22, 0.19);
+    }
+  </style>
+  <!-- make navbar buttons hover with orage effect-->
+  <style>
+    .nav-link:hover {
+      color: #cf1919 !important;
+    }
+  </style>
+  <style>
+    .navbar-brand:hover {
+      color: #cf1919 !important;
+      font: Arial;
+    }
+    </style>
+  <style>
+    footer {
+    background-color: #bcafaf;
+    padding: 40px 20px;
+    text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .about-us,
+    .contact-us {
+      width: 40%;
+      margin-bottom: 20px;
+    }
+
+    .about-us h3,
+    .contact-us h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .about-us p,
+    .contact-us p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
+  <!-- allign the footer a the end of the page -->
+  <style>
+    footer {
+      position: absolute;
+      bottom: -250%;
+      width: 100%;
+    }
+  </style>
+  <!-- allign the table 1 on the top left -->
+  <style>
+    #table1 {
+      position:absolute;
+      top: 20%;
+      left: 0%;
+    }
+  </style>
+  <!-- allign the table 2 on the top right -->
+  <style>
+    #chart1 {
+      position:absolute;
+      top: 150%;
+      right: 0%;
+    }
+  </style>
+  <!-- styles for bullets1 -->
+  <style>
+    #bullets1 {
+      position:absolute;
+      top: 60%;
+      right: 0%;
+    }
+    /* make the bullets1 color animated changing from black to red*/
+    #bullets1 li {
+      color: #5b4242;
+      animation: colorchange 5s infinite;
+    }
+  </style>
+  <!-- styles for bullets2 -->
+  <style>
+    #bullets2 {
+      position:absolute;
+      top: 170%;
+      left: 5%;
+    }
+    /* make the bullets2 color animated changing from black to red*/
+    #bullets2 li {
+      color: #5b4242;
+      animation: colorchange 5s infinite;
+    }
+  </style>
+  <!-- styles for link1 -->
+  <style>
+    #link1 {
+      position:absolute;
+      top: 25%;
+      right: -10%;
+      /* change the color of the link */
+    }
+  </style>
+  <!-- add color to linka -->
+  <style>
+    #link1 a {
+      color: #e20909;
+      font: Arial;
+      /* bold */
+      font-weight: bold;
+      font-size: larger;
+    }
+  </style>
+  <!-- styles for ending tex and endingtext1 -->
+  <style>
+    #endingtext {
+      position:absolute;
+      top: 260%;
+      left: 30%;
+      color: #5b4242;
+    }
+    #endingtext1 {
+      position:absolute;
+      top: 270%;
+      left: 25%;
+      color: #cf1919;
+    }
+  </style>
+  <!-- change the fonts of the text -->
+  <style>
+    #endingtext {
+      font: Arial;
+    }
+    #endingtext1 {
+      font: Arial;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="bar">
+    <div class="container">
+
+      <body>
+        <lottie-player src="static\logo1.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop  autoplay id="logo1"></lottie-player>
+      </body>
+      <a class="navbar-brand" href="#">BloodBankNearYou</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" href="http://127.0.0.1:5000/">Home</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/Blood%20Availability%20Search">Blood Availability Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://127.0.0.1:5000/Blood%20Donation%20Camp">Blood Donation Camp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://127.0.0.1:5000/User%20Help">User Help</a>
+          </li>
+          <li class="nav-item dropdown">
+            {{logger}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    {{notification}}
+  <!-- add a good animated responsive footer -->
+
+  <footer >
+    <div class="footer-container" id="ft">
+      <div class="about-us">
+        <h3>About Us</h3>
+        <p>We are a website dedicated to promoting blood donation and raising awareness about its importance. Our mission is to connect blood donors with those in need and to make the process of blood donation as easy and accessible as possible.</p>
+      </div>
+      <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p>Email: manish.2@iitj.ac.in<br>Phone: 895-559-4083<br>Address: IIT JODHPUR, JODHPUR</p>
+      </div>
+    </div>
+  </footer>
+  <!-- create a div to add image -->
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-6" id="table1">
+            <img src="static\bloodtable.png" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-sm-6" id="chart1">
+            <img src="static\percentageblood.png" class="img-fluid" alt="Responsive image">
+        </div>
+        </div>
+    </div>
+    <!-- create a div to add some bullet points -->
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-6" id="bullets1">
+            <ul>
+                <li>There are 4 main blood groups: A, B, AB and O.</li>
+                <li>Each blood group can be either Rh positive or Rh negative.</li>
+                <li>There are 8 different blood types: A+, A-, B+, B-, AB+, AB-, O+ and O-.</li>
+                <!-- universal donor and recieer -->
+                <li>The universal donor is <h4>O-</h4> who can give blood to anyone, but can only receive blood from another universal donor.</li>
+                <li>The universal recipient is <h4>AB+</h4> who can receive blood from anyone, but can only give blood to another universal recipient.</li>
+            </ul>
+        </div>
+        <div class="col-sm-6" id="bullets2">
+            <ul>
+                <li>Age: The minimum age for blood donation is usually 17 or 18 years, depending on the country and blood bank. Some blood banks may require donors to be older than 18 years.</li>
+                <li>Weight: Donors must weigh at least 110 pounds or 50 kilograms.</li>
+                <li>Health: Donors must be in good health, without any major health conditions that could affect the safety of the blood supply or the donor's health.</li>
+                <li>Medications: Donors must not be taking certain medications, such as blood thinners, that could affect the safety of the blood supply.</li>
+                <li>Lifestyle: Donors must not engage in high-risk behaviors that could increase their risk of transmitting infectious diseases, such as having unprotected sex, using illegal drugs, or traveling to certain high-risk areas.</li>
+                <li>Travel: Donors must not have traveled to certain high-risk areas or countries within a specific period of time, typically ranging from 3 to 12 months, depending on the country and blood bank.</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- make a div to add a link which will directly open a pdf -->
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-6" id="link1">
+            <a href="https://drive.google.com/file/d/184WR_xaqEd2WJsnIzYuTYrpslAthoLNM/view" id="linka" target="_blank">Click here to know more about website</a>
+        </div>
+        </div>
+    </div>
+    <!-- make a div to add ending text -->
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-6" id="endingtext">
+            <h3 id="ft"> Thank you for visiting our website</h3>
+        </div>
+        <div class="col-sm-6" id="endingtext1">
+          <h3 id="ft1">One donation can save up to three lives. Make a life-changing impact and donate blood today.</h3>
+        </div>
+
+        </div>
+</body>
+</html>
